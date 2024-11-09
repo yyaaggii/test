@@ -1,0 +1,44 @@
+import discord
+import random   
+from bot_mantik import gen_pass
+from bot_mantik import emoji_olusturucu
+
+# ayricaliklar (intents) değişkeni botun ayrıcalıklarını depolayacak
+intents = discord.Intents.default()
+# Mesajları okuma ayrıcalığını etkinleştirelim
+intents.message_content = True
+# client (istemci) değişkeniyle bir bot oluşturalım ve ayrıcalıkları ona aktaralım
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():#bot başarılı bir şekilde Discord'a bağlandığında tetiklenir
+    print(f'{client.user} olarak giriş yaptık.')
+
+@client.event
+async def on_message(message):#Sunucudaki herhangi bir kanalda bir mesaj gönderildiğinde tetiklenir.
+    if message.author == client.user:
+        return
+    if message.content.startswith('merhaba'):
+        await message.channel.send("Selam!")
+    elif message.content.startswith('bye'):
+        await message.channel.send("\U0001f642")
+    elif message.content.startswith('emoji'):
+        await message.channel.send(emoji_olusturucu())
+    elif message.content.startswith('yazı'):
+        x = random.randint(1, 2)
+        if x == 1:
+            await message.channel.send("Doğru bildin")
+        else:
+            await message.channel.send("Yanlış bildin :(")
+    elif message.content.startswith('tura'):
+        x = random.randint(1, 2)
+        if x == 2:
+            await message.channel.send("Doğru bildin")
+        else:
+            await message.channel.send("Yanlış bildin :(")
+    elif message.content.startswith('sifre'):
+        await message.channel.send(gen_pass(5))
+    else:
+        await message.channel.send(message.content)
+
+client.run("token :)")
