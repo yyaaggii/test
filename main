@@ -1,3 +1,6 @@
+#this is bot code in python
+
+
 import discord
 import random   
 from bot_mantik import gen_pass
