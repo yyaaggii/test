@@ -64,4 +64,4 @@ async def on_message(message):#Sunucudaki herhangi bir kanalda bir mesaj gönder
     else:
         await message.channel.send(message.content)
     
-client.run("MTMwNDY4ODg4OTMzMTcxMjAyMA.GNXz96.11jgN3p415TIhZwMEoNEaNgqpTtY-kadSzki7E")
+client.run(token :)")
