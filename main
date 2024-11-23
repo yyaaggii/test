@@ -1,7 +1,5 @@
-#this is bot code in python
-
-
 import discord
+import time
 import random   
 from bot_mantik import gen_pass
 from bot_mantik import emoji_olusturucu
@@ -30,6 +28,45 @@ async def on_message(message):#Sunucudaki herhangi bir kanalda bir mesaj gönder
         await message.channel.send("Selam!")
     elif message.content.startswith('emoji'):
         await message.channel.send(emoji_olusturucu())
+    elif message.content.startswith("dünyayı koruyalım"):
+        await message.channel.send("yere çöp atmayalım ve dünyamızı koruyalım!")
+    elif message.content.startswith("cevreyi koruyalım"):
+        await message.channel.send("ormanlara cam vb. çöpler atmayalım!")
+    elif message.content.startswith("canlılar koruyalım"):
+        await message.channel.send("hayvan bitki ve insanların yaşam kaynağı doğayı yok etmeyelim")
+    elif message.content.startswith("nasılsın"):
+        await message.channel.send("İyiyim sen nasılsın?")
+    elif message.content.startswith("nerelisin?"):
+        await message.channel.send("Ben bir bot olduğum için doğduğum yer yok. Ama sahibim türktür.")
+    elif message.content.startswith("hikaye?"):
+        await message.channel.send("https://popartistic.com/kisa-hikaye-ornekleri/ buradan efsane hikayeler bulabilirsin :D benim favorim /kum saati/ ;)")
+    elif message.content.startswith("lets go gambling"):
+        x = random.randint(1,2)
+        if x == 1:
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("(+10000 money)aw dang i...")
+            time.sleep(1.2)
+            await message.channel.send("Wait ı won. I actually WON!")
+            money = money + 10000
+        elif x == 2:
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("aw dang it")
+            await message.channel.send("OK IM DONE")
     elif message.content.startswith('yazı'):
         x = random.randint(1, 2)
         if x == 1:
@@ -64,4 +101,4 @@ async def on_message(message):#Sunucudaki herhangi bir kanalda bir mesaj gönder
     else:
         await message.channel.send(message.content)
     
-client.run(token :)")
+client.run("token")
